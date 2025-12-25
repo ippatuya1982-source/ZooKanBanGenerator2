@@ -133,17 +133,17 @@ const App: React.FC = () => {
   const inputClasses = "w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:border-[#2c5e2e] focus:ring-4 focus:ring-[#2c5e2e]/10 outline-none transition-all shadow-sm text-sm md:text-base";
 
   return (
-    <div className="min-h-screen py-8 md:py-12 px-4 flex flex-col items-center antialiased">
-      <header className="text-center mb-8 md:mb-12">
+    <div className="min-h-screen px-4 pt-8 md:pt-12 pb-6 md:pb-8 flex flex-col items-center antialiased">
+      <header className="text-center mb-8 md:mb-12 w-full max-w-2xl">
         <h1 className="text-2xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-[#2c5e2e] to-[#558b2f] bg-clip-text text-transparent leading-tight py-1">
           もしもあなたが動物園で<br className="md:hidden" />飼育されていたら！？
         </h1>
         <p className="text-gray-400 font-bold tracking-[0.2em] text-[9px] md:text-xs uppercase">AI Official Exhibit Creator</p>
       </header>
 
-      <main className="w-full max-w-2xl">
+      <main className="w-full max-w-2xl flex-grow">
         {!result && !isLoading && (
-          <section className="bg-white/90 backdrop-blur-md p-6 md:p-10 rounded-[24px] md:rounded-[32px] shadow-2xl border border-white">
+          <section className="bg-white/90 backdrop-blur-md p-6 md:p-10 rounded-[24px] md:rounded-[32px] shadow-2xl border border-white mb-8">
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
               <div className="space-y-2 md:space-y-3">
                 <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-sm">
@@ -187,7 +187,7 @@ const App: React.FC = () => {
         )}
 
         {result && (
-          <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700 mb-12">
             <div ref={signboardRef} className="rounded-xl overflow-hidden shadow-xl bg-[#fcfaf5]">
               <Signboard data={result} userName={input.name} />
             </div>
@@ -203,7 +203,7 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="mt-12 md:mt-20 text-center">
+      <footer className="mt-8 md:mt-12 text-center w-full max-w-2xl">
         <p className="text-gray-300 text-[10px] md:text-xs">© 2024 Zoo Exhibit Creator - Powered by Gemini AI</p>
       </footer>
     </div>
