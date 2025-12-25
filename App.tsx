@@ -133,37 +133,37 @@ const App: React.FC = () => {
   const inputClasses = "w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:border-[#2c5e2e] focus:ring-4 focus:ring-[#2c5e2e]/10 outline-none transition-all shadow-sm text-sm md:text-base";
 
   return (
-    <div className="min-h-screen px-4 pt-8 md:pt-12 pb-6 md:pb-8 flex flex-col items-center antialiased">
-      <header className="text-center mb-8 md:mb-12 w-full max-w-2xl">
-        <h1 className="text-2xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-[#2c5e2e] to-[#558b2f] bg-clip-text text-transparent leading-tight py-1">
+    <div className="min-h-screen px-4 pt-12 md:pt-20 pb-12 flex flex-col items-center antialiased">
+      <header className="text-center mb-10 md:mb-16 w-full max-w-2xl">
+        <h1 className="text-3xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-[#2c5e2e] to-[#558b2f] bg-clip-text text-transparent leading-tight py-1">
           もしもあなたが動物園で<br className="md:hidden" />飼育されていたら！？
         </h1>
-        <p className="text-gray-400 font-bold tracking-[0.2em] text-[9px] md:text-xs uppercase">AI Official Exhibit Creator</p>
+        <p className="text-gray-400 font-bold tracking-[0.2em] text-[10px] md:text-sm uppercase">AI Official Exhibit Creator</p>
       </header>
 
-      <main className="w-full max-w-2xl flex-grow">
+      <main className="w-full max-w-2xl">
         {!result && !isLoading && (
-          <section className="bg-white/90 backdrop-blur-md p-6 md:p-10 rounded-[24px] md:rounded-[32px] shadow-2xl border border-white mb-8">
-            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
-              <div className="space-y-2 md:space-y-3">
-                <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-sm">
-                  <span className="text-[#8bc34a] text-lg md:text-xl">•</span>展示名（あなたのお名前）
+          <section className="bg-white/90 backdrop-blur-md p-6 md:p-12 rounded-[32px] shadow-2xl border border-white">
+            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-10">
+              <div className="space-y-2 md:space-y-4">
+                <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-base">
+                  <span className="text-[#8bc34a] text-lg md:text-2xl">•</span>展示名（あなたのお名前）
                 </label>
                 <input type="text" required placeholder={INPUT_PLACEHOLDERS.name} className={inputClasses} value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} />
               </div>
-              <div className="space-y-2 md:space-y-3">
-                <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-sm">
-                  <span className="text-[#8bc34a] text-lg md:text-xl">•</span>生態的特徴（特技・趣味・好きなもの）
+              <div className="space-y-2 md:space-y-4">
+                <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-base">
+                  <span className="text-[#8bc34a] text-lg md:text-2xl">•</span>生態的特徴（特技・趣味・好きなもの）
                 </label>
                 <input type="text" required placeholder={INPUT_PLACEHOLDERS.hobby} className={inputClasses} value={input.hobby} onChange={(e) => setInput({ ...input, hobby: e.target.value })} />
               </div>
-              <div className="space-y-2 md:space-y-3">
-                <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-sm">
-                  <span className="text-[#8bc34a] text-lg md:text-xl">•</span>最近観測された行動（悩み・近況）
+              <div className="space-y-2 md:space-y-4">
+                <label className="flex items-center gap-2 font-bold text-gray-700 text-xs md:text-base">
+                  <span className="text-[#8bc34a] text-lg md:text-2xl">•</span>最近観測された行動（悩み・近況）
                 </label>
                 <textarea required rows={3} placeholder={INPUT_PLACEHOLDERS.worry} className={inputClasses} value={input.worry} onChange={(e) => setInput({ ...input, worry: e.target.value })} />
               </div>
-              <button type="submit" className="w-full py-4 md:py-5 bg-gradient-to-br from-[#2c5e2e] to-[#3a7a3d] text-white font-extrabold text-base md:text-lg rounded-xl md:rounded-2xl shadow-lg hover:-translate-y-1 active:translate-y-0 transition-transform">
+              <button type="submit" className="w-full py-5 md:py-6 bg-gradient-to-br from-[#2c5e2e] to-[#3a7a3d] text-white font-extrabold text-base md:text-xl rounded-2xl shadow-xl hover:-translate-y-1 active:translate-y-0 transition-transform">
                 看板をデザインする
               </button>
             </form>
@@ -171,31 +171,31 @@ const App: React.FC = () => {
         )}
 
         {isLoading && (
-          <div className="py-16 md:py-20 flex flex-col items-center animate-pulse">
-            <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-[#e8f5e9] border-t-[#2c5e2e] rounded-full animate-spin mb-6 md:mb-8" />
-            <p className="font-bold text-[#2c5e2e] text-base md:text-lg text-center px-6 leading-relaxed">
+          <div className="py-20 md:py-32 flex flex-col items-center animate-pulse">
+            <div className="w-16 h-16 md:w-20 md:h-20 border-4 border-[#e8f5e9] border-t-[#2c5e2e] rounded-full animate-spin mb-8 md:mb-10" />
+            <p className="font-bold text-[#2c5e2e] text-lg md:text-2xl text-center px-6 leading-relaxed">
               {LOADING_MESSAGES[loadingMsgIdx]}
             </p>
           </div>
         )}
 
         {error && (
-          <div className="bg-red-50 text-red-600 p-5 md:p-6 rounded-xl md:rounded-2xl border border-red-100 mb-8 text-center">
-            <p className="font-bold mb-1 md:mb-2 text-sm md:text-base">エラーが発生しました</p>
-            <p className="text-xs md:text-sm">{error}</p>
+          <div className="bg-red-50 text-red-600 p-6 md:p-8 rounded-2xl border border-red-100 mb-10 text-center shadow-sm">
+            <p className="font-bold mb-2 text-base md:text-lg">エラーが発生しました</p>
+            <p className="text-sm md:text-base opacity-80">{error}</p>
           </div>
         )}
 
         {result && (
-          <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700 mb-12">
-            <div ref={signboardRef} className="rounded-xl overflow-hidden shadow-xl bg-[#fcfaf5]">
+          <div className="space-y-8 md:space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+            <div ref={signboardRef} className="rounded-2xl overflow-hidden shadow-2xl bg-[#fcfaf5]">
               <Signboard data={result} userName={input.name} />
             </div>
-            <div className="space-y-3 md:space-y-4 px-2 text-center">
-              <button id="downloadBtn" onClick={handleDownload} className="w-full py-4 md:py-5 bg-gradient-to-br from-[#5d4037] to-[#795548] text-white font-extrabold text-base md:text-lg rounded-xl md:rounded-2xl shadow-lg hover:-translate-y-1 active:translate-y-0 transition-transform flex items-center justify-center gap-3">
+            <div className="space-y-4 md:space-y-6 px-2 text-center">
+              <button id="downloadBtn" onClick={handleDownload} className="w-full py-5 md:py-6 bg-gradient-to-br from-[#5d4037] to-[#795548] text-white font-extrabold text-base md:text-xl rounded-2xl shadow-xl hover:-translate-y-1 active:translate-y-0 transition-transform flex items-center justify-center gap-3">
                 🖼️ 解説看板を画像として保存
               </button>
-              <button onClick={() => setResult(null)} className="w-full py-3 md:py-4 text-gray-400 font-bold text-xs md:text-sm hover:text-gray-600 active:text-gray-800 transition-colors">
+              <button onClick={() => setResult(null)} className="w-full py-4 text-gray-400 font-bold text-xs md:text-base hover:text-gray-600 active:text-gray-800 transition-colors">
                 別の看板を作る
               </button>
             </div>
@@ -203,8 +203,10 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="mt-8 md:mt-12 text-center w-full max-w-2xl">
-        <p className="text-gray-300 text-[10px] md:text-xs">© 2024 Zoo Exhibit Creator - Powered by Gemini AI</p>
+      <footer className="mt-20 md:mt-32 pb-8 text-center w-full max-w-2xl border-t border-gray-200/50 pt-8">
+        <p className="text-gray-400 font-medium tracking-wider text-[10px] md:text-xs italic">
+          © 2024 Zoo Exhibit Creator - Powered by Gemini AI
+        </p>
       </footer>
     </div>
   );
